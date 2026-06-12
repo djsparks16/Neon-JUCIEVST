@@ -18,16 +18,32 @@ This build starts the visual overhaul: neon palette, glass panels, stained-glass
 - Reworked the top bar into a glass header with neon title treatment.
 - Reworked matrix page row backgrounds into alternating neon glass strips.
 
+## Implemented in the layout pass (Serum-style single screen)
+
+- Removed the tabbed UI and the auto-wrapping flow grid. Everything now lives
+  on one fixed signal-flow screen: header / oscillators + filter /
+  envelopes + LFOs + voice / mod matrix + FX rack.
+- Added live wavetable displays for Osc A and Osc B (reads the real
+  mipmapped frames at the current morph position, updates on table/morph
+  change and after WAV import). (roadmap item 1, display half)
+- Added visual ADSR displays for Env 1 and Env 2. (item 2, display half)
+- Added LFO shape displays for LFO 1 and LFO 2.
+- Added a stylised filter response display (model / cutoff / resonance).
+- Removed text boxes under knobs — values pop up while dragging.
+- Bipolar sliders (mod amounts, Env2>Cut) now fill from centre.
+- FX rack: six powered mini-cards in a grid instead of a separate tab.
+- Mod matrix: eight compact rows on the main screen.
+
 ## Next feature/UI passes
 
-1. Add oscillator wavetable displays for Osc A and Osc B.
-2. Add visual ADSR editors for Env 1 and Env 2.
+1. Make the wavetable displays editable (drawing, FFT bin editing, 3D view).
+2. Make the ADSR displays editable (drag nodes).
 3. Add visual LFO editors with editable curves and tempo grid.
 4. Add macro controls and macro modulation destinations.
 5. Add modulation rings around knobs.
 6. Add drag-and-drop modulation source handles.
 7. Add preset browser with tags, favourites, author, and category metadata.
-8. Add FX cards with reorder handles and animated meters.
+8. Add FX card reorder handles and animated meters.
 9. Add more oscillator warp modes: bend, fold, quantize, PWM, asymmetry, AM, RM, remap.
 10. Add more filter models: notch, comb, formant, diode, dirty ladder.
 
